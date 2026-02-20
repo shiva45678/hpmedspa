@@ -196,6 +196,19 @@
         .team-member h3 { font-size: 1.5rem; margin-bottom: 5px; }
         .team-member span { color: var(--secondary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
+        /* --- Contact / Location Section --- */
+        #contact { background-color: var(--bg-alt); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .map-wrapper { width: 100%; height: 450px; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); position: relative; border: 1px solid var(--border-color); }
+        .map-wrapper iframe { width: 100%; height: 100%; border: none; }
+        .contact-info { background: var(--card-bg); padding: 40px; border-radius: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); }
+        .contact-info h2 { font-size: 2.5rem; margin-bottom: 25px; }
+        .info-block { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px; }
+        .info-block .icon { font-size: 1.5rem; }
+        .info-block div h4 { font-family: 'Lato', sans-serif; font-size: 1.1rem; color: var(--primary); margin-bottom: 5px; font-weight: 700; }
+        .info-block div p, .info-block div a { color: var(--text-muted); font-size: 1.05rem; transition: 0.3s; }
+        .info-block div a:hover { color: var(--secondary); }
+
         /* --- Footer --- */
         footer { background-color: #111; color: #fff; padding-top: 80px; }
         .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; }
@@ -206,7 +219,9 @@
         .footer-links ul li { margin-bottom: 15px; }
         .footer-links ul li a { color: #bbb; transition: 0.3s; cursor: pointer; }
         .footer-links ul li a:hover { color: var(--secondary); padding-left: 5px; }
-        .footer-contact p { color: #bbb; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .footer-contact p { color: #bbb; margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px; }
+        .footer-contact a { color: #bbb; transition: 0.3s; }
+        .footer-contact a:hover { color: var(--secondary); }
         .footer-bottom { border-top: 1px solid #333; margin-top: 60px; padding: 25px 0; text-align: center; color: #777; font-size: 0.9rem; }
 
         /* --- Modals --- */
@@ -256,18 +271,18 @@
         /* Specifics for Forms (Lead & Appt) */
         .form-modal-body {
             padding: 50px 40px;
-            overflow-y: auto; /* Ensures form content is scrollable */
+            overflow-y: auto; 
             flex-grow: 1;
             text-align: center;
         }
-        .form-modal-body h2 { font-size: 2.5rem; margin-bottom: 15px; padding-right: 20px; } /* Buffer for close button */
+        .form-modal-body h2 { font-size: 2.5rem; margin-bottom: 15px; padding-right: 20px; } 
         .form-modal-body p { margin-bottom: 30px; color: var(--text-muted); }
         
         .form-group { margin-bottom: 20px; text-align: left; position: relative; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 0.9rem; color: var(--text-main); }
         .form-group input, .form-group select {
             width: 100%; padding: 16px 20px; border: 2px solid var(--border-color);
-            border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 16px; /* 16px prevents iOS zoom bug */
+            border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 16px; 
             transition: all 0.3s; background: var(--bg-alt); color: var(--text-main);
         }
         .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(106, 13, 173, 0.1); }
@@ -289,7 +304,7 @@
             position: fixed; top: 0; right: -300px; width: 300px; height: 100vh;
             background: var(--modal-bg); z-index: 1600; box-shadow: -10px 0 30px rgba(0,0,0,0.1);
             transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); padding: 40px 30px;
-            display: flex; flex-direction: column; overflow-y: auto; /* Allows scrolling inside panel */
+            display: flex; flex-direction: column; overflow-y: auto; 
         }
         .mobile-menu-drawer.active { right: 0; }
         .close-menu { font-size: 2.2rem; color: var(--text-main); align-self: flex-end; cursor: pointer; margin-bottom: 30px; line-height: 1; }
@@ -300,8 +315,9 @@
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
             .hero-content h1 { font-size: 3.5rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .about-img { margin-bottom: 40px; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .about-img, .map-wrapper { margin-bottom: 40px; }
+            .map-wrapper { height: 350px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -318,7 +334,9 @@
             .services-grid { grid-template-columns: 1fr; }
             .service-actions { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-contact p { justify-content: center; }
+            .footer-contact p { justify-content: center; text-align: left; }
+            
+            .contact-info { padding: 25px; }
             
             .modal-header { height: 250px; }
             .modal-title { font-size: 2.2rem; left: 20px; }
@@ -335,7 +353,7 @@
         <div class="header-top">
             <div class="container">
                 <span><strong>HOURS:</strong> Mon - Fri: 9 AM - 5 PM</span>
-                <span><strong>CALL/TEXT:</strong> (323) 749-6642</span>
+                <span><strong>CALL/TEXT:</strong> <a href="tel:3237496642">(323) 749-6642</a></span>
                 <span><em>Se Habla Español</em></span>
             </div>
         </div>
@@ -519,8 +537,52 @@
         </div>
     </section>
 
+    <!-- Contact & Location Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Location & Contact</h2>
+            <div class="contact-grid reveal">
+                <!-- Google Maps Embed -->
+                <div class="map-wrapper">
+                    <iframe src="https://maps.google.com/maps?q=33.97401514409353,-118.21680060859929&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+                <!-- Contact Details -->
+                <div class="contact-info">
+                    <h2>Visit Our Spa</h2>
+                    
+                    <div class="info-block">
+                        <span class="icon">📍</span>
+                        <div>
+                            <h4>Our Address</h4>
+                            <a href="https://maps.app.goo.gl/SKt21n1E1kGRdWkWA" target="_blank">2929 E. Florence Ave<br>Huntington Park, CA 90255</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <span class="icon">📞</span>
+                        <div>
+                            <h4>Phone & Text</h4>
+                            <a href="tel:3237496642">(323) 749-6642</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <span class="icon">🕒</span>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday & Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.app.goo.gl/SKt21n1E1kGRdWkWA" target="_blank" class="btn btn-primary" style="margin-top: 15px; width: 100%;">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-grid reveal">
                 <div class="footer-about">
@@ -538,9 +600,18 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <p>📍 2929 E. Florence Ave<br>Huntington Park, CA 90255</p>
-                    <p>📞 (323) 749-6642</p>
-                    <p>✉️ info@hpmedspa.net</p>
+                    <p>
+                        <span>📍</span>
+                        <a href="https://maps.app.goo.gl/SKt21n1E1kGRdWkWA" target="_blank">2929 E. Florence Ave<br>Huntington Park, CA 90255</a>
+                    </p>
+                    <p>
+                        <span>📞</span> 
+                        <a href="tel:3237496642">(323) 749-6642</a>
+                    </p>
+                    <p>
+                        <span>✉️</span> 
+                        <a href="mailto:info@hpmedspa.net">info@hpmedspa.net</a>
+                    </p>
                 </div>
             </div>
             <div class="footer-bottom">
