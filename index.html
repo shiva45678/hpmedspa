@@ -29,7 +29,12 @@
             --modal-bg: #ffffff;
             --shadow-sm: 0 4px 10px rgba(0,0,0,0.05);
             --shadow-lg: 0 15px 35px rgba(106, 13, 173, 0.1);
-            --hero-overlay: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(243,229,245,0.85) 100%);
+            
+            /* Highly Transparent Overlay for Image Visibility */
+            --hero-overlay: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(243,229,245,0.2) 100%);
+            /* Shadows to keep text readable against the visible image */
+            --hero-filter-shadow: drop-shadow(0 4px 10px rgba(255, 255, 255, 0.9));
+            --hero-text-shadow: 0 2px 15px rgba(255, 255, 255, 0.9);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -49,7 +54,12 @@
                 --modal-bg: #1e1e1e;
                 --shadow-sm: 0 4px 10px rgba(0,0,0,0.3);
                 --shadow-lg: 0 15px 35px rgba(0,0,0,0.5);
-                --hero-overlay: linear-gradient(135deg, rgba(18,18,18,0.95) 0%, rgba(30,15,40,0.85) 100%);
+                
+                /* Highly Transparent Overlay for Image Visibility */
+                --hero-overlay: linear-gradient(135deg, rgba(18,18,18,0.6) 0%, rgba(30,15,40,0.4) 100%);
+                /* Shadows to keep text readable against the visible image */
+                --hero-filter-shadow: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.9));
+                --hero-text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
             }
         }
 
@@ -151,11 +161,29 @@
             min-height: 100vh; display: flex; align-items: center;
         }
         .hero-content { max-width: 700px; }
-        .hero-tagline { color: var(--secondary); font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px; }
-        .hero-content h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 40px; color: var(--text-muted); }
+        .hero-tagline { 
+            color: var(--secondary); font-family: 'Playfair Display', serif; 
+            font-style: italic; font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px;
+            text-shadow: var(--hero-text-shadow); /* Added for readability over transparent bg */
+        }
+        .hero-content h1 { 
+            font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; 
+            background: linear-gradient(45deg, var(--primary), var(--secondary)); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+            filter: var(--hero-filter-shadow); /* Required for clipped text shadows */
+        }
+        .hero-content p { 
+            font-size: 1.25rem; margin-bottom: 40px; 
+            color: var(--text-main); font-weight: 600; /* Bolder text for transparent bg */
+            text-shadow: var(--hero-text-shadow); 
+        }
         
-        .hero-offer { background: var(--card-bg); border-left: 6px solid var(--secondary); padding: 25px; margin-bottom: 40px; box-shadow: var(--shadow-lg); border-radius: 0 12px 12px 0; display: inline-block; }
+        .hero-offer { 
+            background: var(--card-bg); border-left: 6px solid var(--secondary); 
+            padding: 25px; margin-bottom: 40px; box-shadow: var(--shadow-lg); 
+            border-radius: 0 12px 12px 0; display: inline-block; 
+            position: relative; z-index: 2;
+        }
         .hero-offer h3 { font-size: 1.6rem; margin-bottom: 5px; }
 
         /* --- About Section --- */
@@ -398,7 +426,7 @@
                 
                 <div class="hero-offer">
                     <h3>$25 OFF First IV Therapy</h3>
-                    <p style="margin:0; font-size:0.95rem;">New Patient Special! Boost your energy and health today.</p>
+                    <p style="margin:0; font-size:0.95rem; text-shadow:none; color: var(--text-muted); font-weight: normal;">New Patient Special! Boost your energy and health today.</p>
                 </div>
                 <br>
                 <button class="btn btn-gold" onclick="openAppointmentModal()">Book Your Consultation</button>
