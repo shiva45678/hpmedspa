@@ -57,7 +57,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { 
             scroll-behavior: smooth; 
-            scroll-padding-top: 90px; /* Crucial for native anchor links to clear the fixed header */
+            scroll-padding-top: 90px; 
         }
         body { 
             font-family: 'Lato', sans-serif; 
@@ -89,7 +89,6 @@
             background: var(--secondary); margin: 20px auto 0; border-radius: 2px;
         }
 
-        /* Scroll Reveal Animation */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -152,53 +151,28 @@
             min-height: 100vh; display: flex; align-items: center;
         }
         .hero-content { max-width: 700px; }
-        .hero-tagline { 
-            color: var(--secondary); font-family: 'Playfair Display', serif; 
-            font-style: italic; font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px;
-        }
-        .hero-content h1 { 
-            font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; 
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
+        .hero-tagline { color: var(--secondary); font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px; }
+        .hero-content h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-content p { font-size: 1.2rem; margin-bottom: 40px; color: var(--text-muted); }
         
-        .hero-offer { 
-            background: var(--card-bg); border-left: 6px solid var(--secondary); 
-            padding: 25px; margin-bottom: 40px; box-shadow: var(--shadow-lg);
-            border-radius: 0 12px 12px 0; display: inline-block;
-        }
+        .hero-offer { background: var(--card-bg); border-left: 6px solid var(--secondary); padding: 25px; margin-bottom: 40px; box-shadow: var(--shadow-lg); border-radius: 0 12px 12px 0; display: inline-block; }
         .hero-offer h3 { font-size: 1.6rem; margin-bottom: 5px; }
 
         /* --- About Section --- */
         #about { background-color: var(--bg-main); }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .about-img { position: relative; }
-        .about-img::before {
-            content: ''; position: absolute; top: -20px; left: -20px; right: 20px; bottom: 20px;
-            border: 3px solid var(--secondary); border-radius: 20px; z-index: 0;
-        }
-        .about-img img { 
-            width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg); 
-            position: relative; z-index: 1;
-        }
+        .about-img::before { content: ''; position: absolute; top: -20px; left: -20px; right: 20px; bottom: 20px; border: 3px solid var(--secondary); border-radius: 20px; z-index: 0; }
+        .about-img img { width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg); position: relative; z-index: 1; }
         .about-text h2 { font-size: 2.8rem; margin-bottom: 25px; }
         .about-text p { margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted); }
-        .minority-owned { 
-            display: inline-flex; align-items: center; background: rgba(106, 13, 173, 0.1); 
-            color: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: 700; 
-            margin-top: 20px; font-size: 0.95rem; border: 1px solid rgba(106, 13, 173, 0.2);
-        }
+        .minority-owned { display: inline-flex; align-items: center; background: rgba(106, 13, 173, 0.1); color: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: 700; margin-top: 20px; font-size: 0.95rem; border: 1px solid rgba(106, 13, 173, 0.2); }
 
         /* --- Services Section --- */
         #services { background-color: var(--bg-alt); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
         
-        .service-card {
-            background: var(--card-bg); border-radius: 20px; overflow: hidden;
-            box-shadow: var(--shadow-sm); transition: all 0.4s ease;
-            display: flex; flex-direction: column; border: 1px solid var(--border-color);
-        }
+        .service-card { background: var(--card-bg); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.4s ease; display: flex; flex-direction: column; border: 1px solid var(--border-color); }
         .service-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-lg); }
         
         .service-img { height: 250px; width: 100%; overflow: hidden; position: relative; }
@@ -215,14 +189,8 @@
         #team { background-color: var(--bg-main); text-align: center; }
         .team-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 50px; }
         .team-member { max-width: 300px; }
-        .team-img-wrapper {
-            width: 180px; height: 180px; border-radius: 50%; overflow: hidden; 
-            margin: 0 auto 20px; border: 4px solid var(--secondary); padding: 5px;
-            background: var(--card-bg); box-shadow: var(--shadow-sm);
-        }
-        .team-img-wrapper img, .team-img-wrapper svg { 
-            width: 100%; height: 100%; border-radius: 50%; object-fit: cover; 
-        }
+        .team-img-wrapper { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; border: 4px solid var(--secondary); padding: 5px; background: var(--card-bg); box-shadow: var(--shadow-sm); }
+        .team-img-wrapper img, .team-img-wrapper svg { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
         .team-icon-placeholder { background: rgba(106, 13, 173, 0.05); display: flex; align-items: center; justify-content: center; }
         .team-icon-placeholder svg { width: 80px; height: 80px; stroke: var(--primary); }
         .team-member h3 { font-size: 1.5rem; margin-bottom: 5px; }
@@ -241,7 +209,7 @@
         .footer-contact p { color: #bbb; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .footer-bottom { border-top: 1px solid #333; margin-top: 60px; padding: 25px 0; text-align: center; color: #777; font-size: 0.9rem; }
 
-        /* --- Modals (Glassmorphism & Modern UI) --- */
+        /* --- Modals --- */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
@@ -260,19 +228,20 @@
         .modal-overlay.active .modal-content { transform: translateY(0) scale(1); }
         
         .modal-close {
-            position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
-            width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; font-size: 1.5rem; cursor: pointer; z-index: 10;
+            position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
+            width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 1.4rem; cursor: pointer; z-index: 50;
             transition: 0.3s; color: #fff; border: 1px solid rgba(255,255,255,0.2);
         }
         .modal-close:hover { background: var(--secondary); color: #121212; transform: rotate(90deg); }
 
-        /* Service Modal Specifically */
-        .modal-header { position: relative; height: 350px; }
+        /* Specifics for Service Detail Modal */
+        .modal-header { position: relative; height: 350px; flex-shrink: 0; }
         .modal-header img { width: 100%; height: 100%; object-fit: cover; }
         .modal-header-gradient { position: absolute; bottom: 0; left: 0; width: 100%; height: 70%; background: linear-gradient(to top, var(--modal-bg), transparent); }
-        .modal-title { position: absolute; bottom: 20px; left: 40px; font-size: 3rem; }
-        .modal-body { padding: 0 40px 40px; overflow-y: auto; }
+        .modal-title { position: absolute; bottom: 20px; left: 40px; font-size: 3rem; margin: 0; padding-right: 40px; }
+        
+        .modal-body { padding: 0 40px 40px; overflow-y: auto; flex-grow: 1; }
         
         .modal-offer-box { background: rgba(212, 175, 55, 0.1); border-left: 5px solid var(--secondary); padding: 20px; margin-bottom: 30px; border-radius: 8px; }
         .modal-offer-box h4 { color: var(--secondary); margin-bottom: 0; font-size: 1.2rem; }
@@ -282,19 +251,23 @@
         .modal-section ul { list-style: none; }
         .modal-section ul li { position: relative; padding-left: 30px; margin-bottom: 12px; color: var(--text-muted); }
         .modal-section ul li::before { content: '✓'; color: var(--secondary); position: absolute; left: 0; font-weight: bold; font-size: 1.2rem; }
-        
         .sub-service-card { background: var(--bg-alt); border: 1px solid var(--border-color); padding: 20px; margin-bottom: 15px; border-radius: 12px; }
 
-        /* Forms */
-        .form-modal-content { max-width: 500px; padding: 50px; text-align: center; }
-        .form-modal-content h2 { font-size: 2.5rem; margin-bottom: 15px; }
-        .form-modal-content p { margin-bottom: 30px; color: var(--text-muted); }
+        /* Specifics for Forms (Lead & Appt) */
+        .form-modal-body {
+            padding: 50px 40px;
+            overflow-y: auto; /* Ensures form content is scrollable */
+            flex-grow: 1;
+            text-align: center;
+        }
+        .form-modal-body h2 { font-size: 2.5rem; margin-bottom: 15px; padding-right: 20px; } /* Buffer for close button */
+        .form-modal-body p { margin-bottom: 30px; color: var(--text-muted); }
         
         .form-group { margin-bottom: 20px; text-align: left; position: relative; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 0.9rem; color: var(--text-main); }
         .form-group input, .form-group select {
             width: 100%; padding: 16px 20px; border: 2px solid var(--border-color);
-            border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 1rem;
+            border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 16px; /* 16px prevents iOS zoom bug */
             transition: all 0.3s; background: var(--bg-alt); color: var(--text-main);
         }
         .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(106, 13, 173, 0.1); }
@@ -316,13 +289,13 @@
             position: fixed; top: 0; right: -300px; width: 300px; height: 100vh;
             background: var(--modal-bg); z-index: 1600; box-shadow: -10px 0 30px rgba(0,0,0,0.1);
             transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); padding: 40px 30px;
-            display: flex; flex-direction: column;
+            display: flex; flex-direction: column; overflow-y: auto; /* Allows scrolling inside panel */
         }
         .mobile-menu-drawer.active { right: 0; }
-        .close-menu { font-size: 2rem; color: var(--text-main); align-self: flex-end; cursor: pointer; margin-bottom: 40px; }
-        .mobile-menu-drawer ul { list-style: none; display: flex; flex-direction: column; gap: 25px; }
-        .mobile-menu-drawer ul li a { font-size: 1.2rem; font-weight: 700; color: var(--text-main); cursor: pointer; }
-        .mobile-menu-drawer .btn { margin-top: 30px; width: 100%; }
+        .close-menu { font-size: 2.2rem; color: var(--text-main); align-self: flex-end; cursor: pointer; margin-bottom: 30px; line-height: 1; }
+        .mobile-menu-drawer ul { list-style: none; display: flex; flex-direction: column; gap: 25px; flex-grow: 1; }
+        .mobile-menu-drawer ul li a { font-size: 1.2rem; font-weight: 700; color: var(--text-main); cursor: pointer; display: block; }
+        .mobile-menu-drawer .btn { margin-top: 30px; width: 100%; flex-shrink: 0; }
 
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
@@ -348,8 +321,9 @@
             .footer-contact p { justify-content: center; }
             
             .modal-header { height: 250px; }
-            .modal-title { font-size: 2rem; left: 20px; }
-            .modal-body, .form-modal-content { padding: 25px; }
+            .modal-title { font-size: 2.2rem; left: 20px; }
+            .modal-body { padding: 0 25px 30px; }
+            .form-modal-body { padding: 40px 25px; }
             .about-img::before { display: none; }
         }
     </style>
@@ -590,76 +564,82 @@
 
     <!-- 2. Lead Capture Modal (Initial Popup) -->
     <div id="leadModal" class="modal-overlay" onclick="closeModalOutside(event, 'leadModal')">
-        <div class="modal-content form-modal-content">
+        <div class="modal-content" style="max-width: 500px;">
             <div class="modal-close" onclick="closeLeadModal()">&times;</div>
-            <div id="leadFormContainer" class="form-container">
-                <h2>Get $25 Off 🎁</h2>
-                <p>Enter your phone number to receive your exclusive discount code and unlock easy booking.</p>
-                <form id="leadForm" onsubmit="submitLeadForm(event)">
-                    <div class="form-group">
-                        <label for="lead-phone">Mobile Number</label>
-                        <input type="tel" id="lead-phone" name="phone" autocomplete="tel" placeholder="(555) 123-4567" required>
-                    </div>
-                    <input type="hidden" name="access_key" value="f2900fa4-3288-47c9-bd47-d61375a965f6">
-                    <input type="hidden" name="subject" value="New Lead from HP Med Spa Website">
-                    <input type="hidden" name="message" value="New lead captured from $25 Off Popup">
-                    <input type="checkbox" name="botcheck" style="display:none">
-                    <button type="submit" class="btn btn-gold" style="width: 100%;">Unlock Offer Now</button>
-                </form>
-            </div>
-            <div id="leadSuccess" class="success-message">
-                <h2 style="color: var(--primary);">You're In! 🎉</h2>
-                <p>We've saved your discount. Click "Buy Now" on any service to claim it.</p>
-                <button class="btn btn-primary" onclick="closeLeadModal()" style="margin-top: 20px; width: 100%;">Start Browsing</button>
+            
+            <div class="form-modal-body">
+                <div id="leadFormContainer" class="form-container">
+                    <h2>Get $25 Off 🎁</h2>
+                    <p>Enter your phone number to receive your exclusive discount code and unlock easy booking.</p>
+                    <form id="leadForm" onsubmit="submitLeadForm(event)">
+                        <div class="form-group">
+                            <label for="lead-phone">Mobile Number</label>
+                            <input type="tel" id="lead-phone" name="phone" autocomplete="tel" placeholder="(555) 123-4567" required>
+                        </div>
+                        <input type="hidden" name="access_key" value="f2900fa4-3288-47c9-bd47-d61375a965f6">
+                        <input type="hidden" name="subject" value="New Lead from HP Med Spa Website">
+                        <input type="hidden" name="message" value="New lead captured from $25 Off Popup">
+                        <input type="checkbox" name="botcheck" style="display:none">
+                        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 10px;">Unlock Offer Now</button>
+                    </form>
+                </div>
+                <div id="leadSuccess" class="success-message">
+                    <h2 style="color: var(--primary);">You're In! 🎉</h2>
+                    <p>We've saved your discount. Click "Buy Now" on any service to claim it.</p>
+                    <button class="btn btn-primary" onclick="closeLeadModal()" style="margin-top: 20px; width: 100%;">Start Browsing</button>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- 3. Appointment Booking Modal -->
     <div id="appointmentModal" class="modal-overlay" onclick="closeModalOutside(event, 'appointmentModal')">
-        <div class="modal-content form-modal-content">
+        <div class="modal-content" style="max-width: 500px;">
             <div class="modal-close" onclick="closeAppointmentModal()">&times;</div>
-            <div id="appointmentFormContainer" class="form-container">
-                <h2>Book Appointment</h2>
-                <p>Request a time and our team will reach out to confirm your booking.</p>
-                <form id="appointmentForm" onsubmit="submitAppointmentForm(event)">
-                    <div class="form-group">
-                        <label for="appt-name">Full Name</label>
-                        <input type="text" id="appt-name" name="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-phone">Phone Number</label>
-                        <input type="tel" id="appt-phone" name="phone" autocomplete="tel" placeholder="(555) 123-4567" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-service">Treatment of Interest</label>
-                        <select id="appt-service" name="service" required>
-                            <option value="General Inquiry">General Inquiry / Consultation</option>
-                            <option value="EMSculpt NEO">EMSculpt NEO</option>
-                            <option value="EMSella">EMSella</option>
-                            <option value="IV Vitamin Therapy">IV Vitamin Therapy</option>
-                            <option value="IV Therapy NAD">IV Therapy NAD+</option>
-                            <option value="PRP Therapy">PRP Therapy</option>
-                            <option value="Vampire Facial">Vampire Facial</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-date">Preferred Date & Time</label>
-                        <input type="text" id="appt-date" name="datetime" placeholder="e.g. Next Monday Morning" required>
-                    </div>
+            
+            <div class="form-modal-body">
+                <div id="appointmentFormContainer" class="form-container">
+                    <h2>Book Appointment</h2>
+                    <p>Request a time and our team will reach out to confirm your booking.</p>
+                    <form id="appointmentForm" onsubmit="submitAppointmentForm(event)">
+                        <div class="form-group">
+                            <label for="appt-name">Full Name</label>
+                            <input type="text" id="appt-name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appt-phone">Phone Number</label>
+                            <input type="tel" id="appt-phone" name="phone" autocomplete="tel" placeholder="(555) 123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appt-service">Treatment of Interest</label>
+                            <select id="appt-service" name="service" required>
+                                <option value="General Inquiry">General Inquiry / Consultation</option>
+                                <option value="EMSculpt NEO">EMSculpt NEO</option>
+                                <option value="EMSella">EMSella</option>
+                                <option value="IV Vitamin Therapy">IV Vitamin Therapy</option>
+                                <option value="IV Therapy NAD">IV Therapy NAD+</option>
+                                <option value="PRP Therapy">PRP Therapy</option>
+                                <option value="Vampire Facial">Vampire Facial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="appt-date">Preferred Date & Time</label>
+                            <input type="text" id="appt-date" name="datetime" placeholder="e.g. Next Monday Morning" required>
+                        </div>
 
-                    <!-- Web3Forms Hidden Fields -->
-                    <input type="hidden" name="access_key" value="f2900fa4-3288-47c9-bd47-d61375a965f6">
-                    <input type="hidden" name="subject" value="New Appointment Request">
-                    <input type="checkbox" name="botcheck" style="display:none">
+                        <!-- Web3Forms Hidden Fields -->
+                        <input type="hidden" name="access_key" value="f2900fa4-3288-47c9-bd47-d61375a965f6">
+                        <input type="hidden" name="subject" value="New Appointment Request">
+                        <input type="checkbox" name="botcheck" style="display:none">
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Request Appointment</button>
-                </form>
-            </div>
-            <div id="appointmentSuccess" class="success-message">
-                <h2 style="color: var(--primary);">Request Received! ✨</h2>
-                <p>Thank you! We will contact you shortly to confirm your appointment details.</p>
-                <button class="btn btn-primary" onclick="closeAppointmentModal()" style="margin-top: 20px; width: 100%;">Done</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Request Appointment</button>
+                    </form>
+                </div>
+                <div id="appointmentSuccess" class="success-message">
+                    <h2 style="color: var(--primary);">Request Received! ✨</h2>
+                    <p>Thank you! We will contact you shortly to confirm your appointment details.</p>
+                    <button class="btn btn-primary" onclick="closeAppointmentModal()" style="margin-top: 20px; width: 100%;">Done</button>
+                </div>
             </div>
         </div>
     </div>
@@ -674,38 +654,40 @@
             else { header.classList.remove('scrolled'); }
         });
 
-        // Mobile Menu Drawer Toggle
+        // Mobile Menu Drawer Toggle & Body Lock
         function toggleMenu() {
             const drawer = document.getElementById('mobileDrawer');
             const overlay = document.getElementById('mobileOverlay');
-            drawer.classList.toggle('active');
+            
+            const isActive = drawer.classList.toggle('active');
             overlay.classList.toggle('active');
+            
+            // Prevent background scrolling when menu is open
+            document.body.style.overflow = isActive ? 'hidden' : '';
         }
 
         // Custom Robust Smooth Scrolling Logic (Intercepts Anchor Links)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
-                if (targetId === '#') return; // Skip empty anchors
+                if (targetId === '#') return; 
 
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    e.preventDefault(); // Prevent native jump
+                    e.preventDefault(); 
                     
                     // Close the mobile menu if it is currently open
                     const drawer = document.getElementById('mobileDrawer');
                     if (drawer.classList.contains('active')) {
-                        toggleMenu();
+                        toggleMenu(); 
                     }
 
-                    // Calculate the position taking the fixed header into account
-                    // If header is scrolled, it's about 75px. Unscrolled is slightly larger.
+                    // Calculate offset taking fixed header into account + a small buffer
                     const headerOffset = document.getElementById('main-header').offsetHeight;
                     const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20;
 
-                    // Smoothly scroll to the calculation
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: "smooth"
